@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carmilla's Ultimate Love Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #181818;
+      color: #fff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .intro {
+      font-size: 1.15em;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #fafafa;
+    }
+    .carmilla-container {
+      position: relative;
+      margin: 40px 0 20px 0;
+    }
+    .carmilla-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      box-shadow: 0 0 40px 10px #d61860, 0 0 60px 20px #fff0fa inset;
+      border: 6px solid #d61860;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      z-index: 2;
+    }
+    .chains {
+      position: absolute;
+      top: 70px; left: 50px; right: 50px;
+      display: none;
+      width: 80px; height: 80px;
+      margin: auto;
+      z-index: 1;
+      pointer-events: none;
+      animation: chain-ultimate 1.6s linear forwards;
+    }
+    @keyframes chain-ultimate {
+      0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+      30% { opacity: 1; transform: scale(1.2) rotate(25deg);}
+      70% { opacity: 1; transform: scale(1) rotate(-15deg);}
+      100% { opacity: 0; transform: scale(0.8) rotate(0deg);}
+    }
+    .letter-container {
+      background: #f7fbe7;
+      color: #333;
+      max-width: 550px;
+      margin: 0 auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.2s;
+      position: relative;
+    }
+    .letter-container.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    h1 {
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+    .signature {
+      margin-top: 30px;
+      font-size: 1.1em;
+      font-style: italic;
+      color: #555;
+    }
+    @media (max-width: 600px) {
+      .letter-container {
+        max-width: 95vw;
+        padding: 10vw 4vw;
+      }
+      .carmilla-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .caption {
+      color: #e61860;
+      margin-bottom: 18px;
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    Click Carmilla to unleash her ultimate and reveal a secret message!<br>
+    (POV: You can't afford expensive love letters, so you code one with Carmilla's power.)
+  </div>
+  <div class="carmilla-container">
+    <!-- Replace the src below with a Carmilla PNG/JPG/GIF you like -->
+    <img src="https://static.wikia.nocookie.net/mobile-legends/images/3/38/Hero-Carmilla.png" alt="Carmilla MLBB" class="carmilla-img" id="carmillaBtn" title="Unleash Ultimate">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Chain_icon.png" alt="Chains" class="chains" id="chainsAnim">
+  </div>
+  <div class="caption" id="ultimateCaption" style="display:none;">
+    Carmilla's ultimate is unleashed!
+  </div>
+  <div class="letter-container" id="loveLetter">
+    <h1>Hi, my love</h1>
+    <p>
+      In the quiet moments of today, I find myself reflecting on the beauty of our love, and I am compelled to put pen to paper, to express what often remains unspoken but deeply felt.
+      From the moment you entered my life, everything changed. You brought color to my monochrome days and music to silent nights. With you, I have discovered a favorite soundtrack, and your smile, my greatest comfort.
+    </p>
+    <p>
+      I often marvel at how effortlessly you understand me, sometimes even more profoundly than I understand myself. In your eyes, I see a future filled with promise and possibility. You have this incredible way of making ordinary moments feel extraordinary, and in your presence, I find a joy that I have never known before.
+    </p>
+    <p>
+      Through the ups and downs, the twists and turns of life, my love for you has only deepened. It has become a steady flame, unwavering and constant amid all of life's uncertainties. Your strength inspires me, your wisdom enlightens me, and your kindness fills me with a sense of immense gratitude.
+    </p>
+    <p>
+      I promise to be there for you, to laugh and let tears, in triumphs and in trials. I am committed to growing with you, learning with you, and building a future together where our love continues to flourish. I vow to listen, to understand, and to always consider your heart in every decision I make.
+    </p>
+    <p>
+      As we journey through life side by side, know that my love for you is as steadfast as the stars. Whether we are miles apart or side by side, my heart is irrevocably tied to yours. In every heartbeat, in every breath, I find echoes of our shared love, a melody that plays endlessly, a tune that speaks of us.
+    </p>
+    <p>
+      Let this letter be a reminder of my feelings for you, especially in times when words are not enough to convey what you truly mean to me. Our love is a rare gem, precious and enduring. It is the light that guides me, the force that drives me, and the peace that soothes me.
+    </p>
+    <p>
+      I look forward to every day, every moment, and every second I get to spend with you, for in each, I find a reason to love you more. You are my heart, my soul, my everything.
+    </p>
+    <div class="signature">DeletoBlue &lt;3</div>
+  </div>
+  <script>
+    const carmillaBtn = document.getElementById('carmillaBtn');
+    const chainsAnim = document.getElementById('chainsAnim');
+    const ultimateCaption = document.getElementById('ultimateCaption');
+    const loveLetter = document.getElementById('loveLetter');
+
+    carmillaBtn.addEventListener('click', function() {
+      // Show chain animation
+      chainsAnim.style.display = 'block';
+      chainsAnim.style.animation = 'chain-ultimate 1.6s linear forwards';
+
+      // Show ultimate caption
+      ultimateCaption.style.display = 'block';
+      // Hide Carmilla button after click
+      carmillaBtn.style.filter = 'grayscale(85%) blur(2px)';
+      carmillaBtn.style.pointerEvents = 'none';
+
+      // After animation, show letter
+      setTimeout(function() {
+        chainsAnim.style.display = 'none';
+        ultimateCaption.style.display = 'none';
+        loveLetter.classList.add('visible');
+      }, 1600); // Duration of animation
+    });
+  </script>
+</body>
+</html>
